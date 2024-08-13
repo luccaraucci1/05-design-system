@@ -10,13 +10,16 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "",
-    "build-storybook": ""
+    "build-storybook": "",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "dependencies": {
     "@ignite-ui/eslint-config": "*",
     "@ignite-ui/react": "*",
     "@ignite-ui/tokens": "*",
     "@ignite-ui/ts-config": "*",
+    "@storybook/addon-a11y": "^8.2.9",
+    "phosphor-react": "^1.4.1",
     "polished": "^4.3.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
@@ -31,6 +34,7 @@
     "@storybook/blocks": "^8.2.8",
     "@storybook/react": "^8.2.8",
     "@storybook/react-vite": "^8.2.8",
+    "@storybook/storybook-deployer": "^2.8.16",
     "@storybook/test": "^8.2.8",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
