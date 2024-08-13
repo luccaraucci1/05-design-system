@@ -1,4 +1,4 @@
-import { Box, Text, BoxProps } from '@ignite-ui/react'
+import { Box, Text, BoxProps } from '@luccaignite-ui/react'
 import type { Meta, StoryObj} from '@storybook/react'
 
 export default {

@@ -1,4 +1,4 @@
-# @ignite-ui/eslint-config
+# @luccaignite-ui/eslint-config
 
 ## 1.1.0
 
