@@ -1,4 +1,4 @@
-# @luccaignite-ui/eslint-config
+# @luccaignite-ui/tokens
 
 ## 2.0.0
 
@@ -7,9 +7,3 @@
 - Add new color
 - 133cb91: change name
 - fbf22bd: Mudança de nome
-
-## 1.1.0
-
-### Minor Changes
-
--
