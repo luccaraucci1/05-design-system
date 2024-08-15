@@ -132,7 +132,7 @@ var {
 
 // src/components/Box.tsx
 var Box = styled("div", {
-  padding: "$4",
+  padding: "$6",
   borderRadius: "$md",
   backgroundColor: "$gray800",
   border: "1px solid $gray600"
@@ -197,8 +197,8 @@ import * as Avatar from "@radix-ui/react-avatar";
 var AvatarContainer = styled(Avatar.Root, {
   borderRadius: "$full",
   display: "inline-block",
-  width: "$12",
-  height: "$12",
+  width: "$16",
+  height: "$16",
   overflow: "hidden"
 });
 var AvatarImage = styled(Avatar.Image, {
@@ -250,6 +250,9 @@ var Button = styled("button", {
   cursor: "pointer",
   "&:disabled": {
     cursor: "not-allowed"
+  },
+  "&:focus": {
+    boxShadow: "0 0 0 2px $colors$gray100"
   },
   svg: {
     width: "$4",
@@ -305,6 +308,9 @@ var Button = styled("button", {
 });
 Button.displayName = "Button";
 
+// src/components/TextInput/index.tsx
+import { forwardRef } from "react";
+
 // src/components/TextInput/styles.ts
 var TextInputContainer = styled("div", {
   backgroundColor: "$gray900",
@@ -313,13 +319,26 @@ var TextInputContainer = styled("div", {
   boxSizing: "border-box",
   border: "2px solid $gray900",
   display: "flex",
-  alignItems: "baseline",
+  alignItems: "center",
+  variants: {
+    size: {
+      sm: {
+        padding: "$2 $3"
+      },
+      md: {
+        padding: "$3 $4"
+      }
+    }
+  },
   "&:has(input:focus)": {
     borderColor: "$ignite300"
   },
   "&:has(input:disabled)": {
     opacity: 0.5,
     cursor: "not-allowed"
+  },
+  defaultVariants: {
+    size: "md"
   }
 });
 var Prefix = styled("span", {
@@ -342,20 +361,20 @@ var Input = styled("input", {
   "&:disabled": {
     cursor: "not-allowed"
   },
-  "&:placeholder": {
+  "&::placeholder": {
     color: "$gray400"
   }
 });
 
 // src/components/TextInput/index.tsx
 import { jsx as jsx2, jsxs as jsxs2 } from "react/jsx-runtime";
-function TextInput(_a) {
+var TextInput = forwardRef((_a, ref) => {
   var _b = _a, { prefix } = _b, props = __objRest(_b, ["prefix"]);
   return /* @__PURE__ */ jsxs2(TextInputContainer, { children: [
     !!prefix && /* @__PURE__ */ jsx2(Prefix, { children: prefix }),
-    /* @__PURE__ */ jsx2(Input, __spreadValues({}, props))
+    /* @__PURE__ */ jsx2(Input, __spreadProps(__spreadValues({}, props), { ref }))
   ] });
-}
+});
 TextInput.displayName = "TextInput";
 
 // src/components/Checkbox/styles.ts
@@ -377,7 +396,7 @@ var CheckboxContainer = styled(Checkbox.Root, {
   '&[data-state="checked"]': {
     backgroundColor: "$ignite300"
   },
-  "&:focus": {
+  '&:focus, &[data-state="checked"]': {
     border: "2px solid $ignite300"
   }
 });
@@ -487,6 +506,78 @@ var TextArea = styled("textarea", {
   }
 });
 TextArea.displayName = "TextArea";
+
+// src/components/Toast/index.tsx
+import { X } from "phosphor-react";
+
+// src/components/Toast/styles.ts
+var ToastContainer = styled("div", {
+  display: "flex",
+  flexDirection: "column",
+  gap: "10px"
+});
+var Header = styled("div", {
+  display: "flex",
+  justifyContent: "space-between",
+  svg: {
+    color: "$gray200"
+  }
+});
+var Label2 = styled("span", {
+  color: "$white",
+  fontWeight: "$bold",
+  fontFamily: "$default",
+  fontSize: "20px"
+});
+var Description = styled("span", {
+  color: "$gray200",
+  fontFamily: "$default",
+  fontSize: "$sm"
+});
+
+// src/components/Toast/index.tsx
+import { jsx as jsx5, jsxs as jsxs4 } from "react/jsx-runtime";
+function Toast() {
+  return /* @__PURE__ */ jsxs4(ToastContainer, { children: [
+    /* @__PURE__ */ jsxs4(Header, { children: [
+      /* @__PURE__ */ jsx5(Label2, { children: "Agendamento realizado" }),
+      /* @__PURE__ */ jsx5(X, { size: 20 })
+    ] }),
+    /* @__PURE__ */ jsx5(Description, { children: "Quarta-feira, 23 de Outubro \xE0s 16h" })
+  ] });
+}
+Toast.displayName = "Toast";
+
+// src/components/Tooltip/styles.ts
+var TooltipBox = styled("div", {
+  padding: "$4",
+  borderRadius: "$md",
+  backgroundColor: "$gray900",
+  width: "fit-content",
+  position: "relative",
+  span: {
+    color: "$gray100",
+    fontFamily: "$default",
+    fontSize: "$sm"
+  },
+  "&::after": {
+    content: "",
+    position: "absolute",
+    width: "1rem",
+    height: "1rem",
+    top: "80%",
+    left: "48%",
+    transform: "rotate(45deg)",
+    background: "$gray900",
+    zIndex: "-9999"
+  }
+});
+
+// src/components/Tooltip/index.tsx
+import { jsx as jsx6 } from "react/jsx-runtime";
+function Tooltip() {
+  return /* @__PURE__ */ jsx6(TooltipBox, { children: /* @__PURE__ */ jsx6("span", { children: "21 de Outubro - Indispon\xEDvel" }) });
+}
 export {
   Avatar2 as Avatar,
   Box,
@@ -496,5 +587,15 @@ export {
   MultiStep,
   Text,
   TextArea,
-  TextInput
+  TextInput,
+  Toast,
+  Tooltip,
+  config,
+  createTheme,
+  css,
+  getCssText,
+  globalCss,
+  keyframes,
+  styled,
+  theme
 };
