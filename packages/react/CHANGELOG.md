@@ -1,5 +1,11 @@
 # @luccaignite-ui/react
 
+## 4.0.0
+
+### Major Changes
+
+- 22ad2ec: New components
+
 ## 3.0.0
 
 ### Major Changes
