@@ -1,0 +1,3 @@
+import{j as e}from"./jsx-runtime-j_jdvEMj.js";import{c as m,B as i}from"./index-BtaOO1Ls.js";import"./index-B-o1Wr-g.js";import"./_commonjsHelpers-Cpj98o6Y.js";import"./index-BDlsjaCx.js";const x={title:"Form/ Toast",component:m,args:{},decorators:[t=>e.jsx(i,{as:"label",css:{display:"flex",flexDirection:"column",gap:"$2",width:"360px"},children:t()})]},r={args:{}};var s,o,a;r.parameters={...r.parameters,docs:{...(s=r.parameters)==null?void 0:s.docs,source:{originalSource:`{
+  args: {}
+}`,...(a=(o=r.parameters)==null?void 0:o.docs)==null?void 0:a.source}}};const u=["Primary"];export{r as Primary,u as __namedExportsOrder,x as default};
